@@ -1,0 +1,14 @@
+{
+  "311_rows_loaded": 29704,
+  "311_bad_timestamp_dropped": 0,
+  "311_duplicates_dropped": 0,
+  "311_bad_borough_dropped": 13,
+  "rain_days": 1050,
+  "rain_null_values_filled_with_0": 0,
+  "311_after_last_rain_day_ignored": 0,
+  "output_rows": 5250,
+  "output_rows_expected": 5250,
+  "date_min": "2024-01-01",
+  "date_max": "2026-11-15",
+  "parquet_written": false
+}
