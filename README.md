@@ -5,8 +5,8 @@ M.Sc. capstone: A Cloud-Based Digital Twin for Climate-Resilient Urban Infrastru
 ## Status
 In progress. Everything is PROPOSED unless marked done.
 - [x] Repository created
-- [ ] Data downloaded and documented
-- [ ] PySpark pipeline
+- [x] Data downloaded and documented
+- [x] PySpark pipeline
 - [ ] Digital Twin, ML, what-if analysis, dashboard
 
 ## Proposed scope
