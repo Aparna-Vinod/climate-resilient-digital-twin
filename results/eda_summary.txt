@@ -1,0 +1,41 @@
+Rows: 5250  | days: 1050  | boroughs: 5
+Date range: 2024-01-01 to 2026-11-15
+Train rows: 3655  Test rows: 1595
+Flood-day share (flood_count >= 4): train 0.108, test 0.095
+
+Flood days by borough (count and share of its days):
+               sum   mean
+borough                  
+BRONX           24  0.023
+BROOKLYN       180  0.171
+MANHATTAN       27  0.026
+QUEENS         261  0.249
+STATEN ISLAND   52  0.050
+
+Missing values per column:
+borough              0
+date                 0
+precip_mm            0
+rain_mm              0
+max_hourly_mm        0
+wet_hours            0
+precip_prev1         0
+precip_3day          0
+precip_7day          0
+month                0
+day_of_week          0
+flood_count          0
+catch_basin_count    0
+manhole_count        0
+is_flood_day         0
+
+Rainfall (mm) summary:
+       precip_mm  max_hourly_mm
+count    1050.00        1050.00
+mean        3.42           1.07
+std         7.89           2.25
+min         0.00           0.00
+25%         0.00           0.00
+50%         0.00           0.00
+75%         2.70           1.00
+max        65.60          16.10
