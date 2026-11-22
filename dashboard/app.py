@@ -67,7 +67,8 @@ with tab2:
         st.write("Evaluated on the 2026 test period. Accuracy is not shown because only about 10% "
                  "of borough-days are flood days.")
         st.dataframe(metrics.round(3), hide_index=True)
-        st.bar_chart(metrics.set_index("model")[["precision", "recall", "f1"]])
+        st.bar_chart(metrics.set_index("model")[["precision", "recall", "f1"]], stack=False)
+        st.caption("Bars in each group, left to right: F1, precision, recall.")
 
 with tab3:
     if risk is None:
@@ -75,7 +76,7 @@ with tab3:
     else:
         dates = sorted(risk["date"].dt.date.unique())
         chosen = st.select_slider("Date", options=dates, value=dates[-1])
-        st.subheader(f"Predicted flood risk on {chosen}")
+        st.subheader(f"Flood risk score on {chosen}")
         st.bar_chart(dd.risk_on_date(risk, chosen))
         if base is not None:
             day = base[base["date"] == pd.Timestamp(chosen)].iloc[0]
@@ -83,8 +84,10 @@ with tab3:
         borough = st.selectbox("Risk over time for", sorted(risk["borough"].unique()))
         series = risk[risk["borough"] == borough].set_index("date")["risk"]
         st.line_chart(series)
-        st.caption("Risk is the model's predicted probability of a flood day (at least "
-                   f"{dd.THRESHOLD} complaints). It is not a measured flood.")
+        st.caption("Risk is a model score between 0 and 1 for a flood day (at least "
+                   f"{dd.THRESHOLD} complaints). It is not a calibrated probability, because the "
+                   "models use balanced class weights, so scores are higher than the real flood-day "
+                   "rate (about 9.5% in 2026). It is not a measured flood.")
 
 with tab4:
     if whatif is None:
@@ -94,7 +97,7 @@ with tab4:
         factor = st.select_slider("Rainfall multiplier", options=factors,
                                   format_func=lambda f: f"x{f:g} ({(f - 1):+.0%})")
         table = dd.whatif_for_factor(whatif, factor)
-        st.bar_chart(table[["risk_baseline", "risk_scenario"]])
+        st.bar_chart(table[["risk_baseline", "risk_scenario"]], stack=False)
         st.dataframe(table.round(3))
         if factor > 1:
             st.warning("Scaled rainfall can go beyond what was observed in 2024-2026 "
