@@ -1,0 +1,26 @@
+{
+  "baseline_threshold_mm": 10.0,
+  "baseline_train_f1": 0.40359897172236503,
+  "models": {
+    "logistic_regression": {
+      "best_params": {
+        "model__C": 0.1
+      },
+      "cv_average_precision": 0.4825260377110777,
+      "decision_threshold": 0.5816,
+      "cv_f1_at_threshold": 0.4823848238482385
+    },
+    "random_forest": {
+      "best_params": {
+        "model__max_depth": 5,
+        "model__min_samples_leaf": 5
+      },
+      "cv_average_precision": 0.47120734622941285,
+      "decision_threshold": 0.5244,
+      "cv_f1_at_threshold": 0.47619047619047616
+    }
+  },
+  "best_model": "logistic_regression",
+  "selection_rule": "highest mean average precision over the 5 TimeSeriesSplit validation folds on 2024-2025 data",
+  "test_year_used_for_selection": false
+}

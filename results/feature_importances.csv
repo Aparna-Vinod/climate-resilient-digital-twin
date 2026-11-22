@@ -1,0 +1,21 @@
+model,feature,importance,kind
+logistic_regression,precip_mm,0.8316929414473268,coefficient on standardised features
+logistic_regression,precip_prev1,0.19062941767490096,coefficient on standardised features
+logistic_regression,precip_3day,0.4807262659676508,coefficient on standardised features
+logistic_regression,max_hourly_mm,-0.16576299862645905,coefficient on standardised features
+logistic_regression,month,0.053894386289256815,coefficient on standardised features
+logistic_regression,borough_BRONX,-1.3941614233115802,coefficient on standardised features
+logistic_regression,borough_BROOKLYN,1.0520584141097433,coefficient on standardised features
+logistic_regression,borough_MANHATTAN,-1.133249737364108,coefficient on standardised features
+logistic_regression,borough_QUEENS,1.8061951866112786,coefficient on standardised features
+logistic_regression,borough_STATEN ISLAND,-0.3382867388887979,coefficient on standardised features
+random_forest,precip_mm,0.18445253669213899,impurity importance
+random_forest,precip_prev1,0.058449642614754084,impurity importance
+random_forest,precip_3day,0.24739661240591782,impurity importance
+random_forest,max_hourly_mm,0.10050317744424976,impurity importance
+random_forest,month,0.021101481678053702,impurity importance
+random_forest,borough_BRONX,0.07457225204980585,impurity importance
+random_forest,borough_BROOKLYN,0.054043677380671416,impurity importance
+random_forest,borough_MANHATTAN,0.06655742906996907,impurity importance
+random_forest,borough_QUEENS,0.1691974504770721,impurity importance
+random_forest,borough_STATEN ISLAND,0.023725740187367197,impurity importance
